@@ -45,5 +45,24 @@ def create_linked_list(input_list):
     for i in range(1,len(input_list)):
         current_node.next = Node(input_list[i])
         current_node = current_node.next
-        
+    
+    return head
+
+def create_linked_list_better(input_list):
+    """
+    Function to create a linked list
+    @param input_list: a list of integers
+    @return: head node of the linked list
+    """
+    head = None
+    tail = None
+
+    for item in input_list:
+        if head is None:
+            head = Node(item)
+            tail = head
+        else:
+            tail.next = Node(item)
+            tail = tail.next
+    
     return head
