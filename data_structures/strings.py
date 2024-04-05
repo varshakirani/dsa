@@ -66,3 +66,26 @@ def word_flipper(our_string):
 
     flipped_words = [word[::-1] for word in our_string.split(" ")]
     return " ".join(flipped_words)
+
+def hamming_distance(str1, str2):
+
+    """
+    Calculate the hamming distance of the two strings
+    In information theory, the Hamming distance between two strings of equal length is
+    the number of positions at which the corresponding symbols are different.
+
+    Args:
+       str1(string),str2(string): Strings to be used for finding the hamming distance
+    Returns:
+       int: Hamming Distance
+    """
+    
+    if len(str1) != len(str2):
+        return None
+    
+    counter = 0
+    for i in range(len(str1)):
+        if str1[i] != str2[i]:
+            counter+=1
+            
+    return counter
