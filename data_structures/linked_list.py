@@ -29,6 +29,26 @@ class LinkedList:
             node = node.next
 
         return pylist
+
+    def prepend(self, value):
+        """ Prepend a value to the beginning of the list. """
+        node = self.head
+        
+        self.head = Node(value)
+        self.head.next = node
+        
+        return
+
+    def search(self, value):
+        """ Search the linked list for a node with the requested value and return the node. """
+        node = self.head
+        
+        while node:
+            if node.value == value:
+                return node
+            node = node.next
+            
+        return None
         
 def create_linked_list(input_list):
     """
